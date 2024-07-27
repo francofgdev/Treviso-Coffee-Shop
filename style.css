@@ -31,6 +31,9 @@ section {
 }
 
 .header {
+    list-style: none;
+    text-decoration: none;
+    outline: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -51,6 +54,9 @@ section {
     margin: 0 1rem;
     font-size: 1.8rem;
     color: #fff;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
 }
 
 .navbar a:hover {
@@ -58,6 +64,10 @@ section {
     border-bottom: 0.1rem solid var(--main-color);
     padding-bottom: 0.5rem;
     font-size: 2rem;
+}
+
+.dropdown {
+    display: none;
 }
 
 .logo img {
@@ -82,6 +92,7 @@ section {
     color: #fff;
     font-size: 2rem;
     padding: 0 0.5rem;
+    text-decoration: none;
 }
 
 .social-media a:hover {
@@ -107,15 +118,12 @@ section {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-
     min-height: 100vh;
 }
 
 .content {
     max-width: 70rem;
     margin-left: 30px;
-
-
 }
 
 .content h3 {
@@ -147,7 +155,7 @@ section {
     margin-top: 1rem;
     display: inline-block;
     border-radius: 8px;
-    width: 15%;
+    width: 200px;
     text-align: center;
 }
 
@@ -159,12 +167,18 @@ section {
 }
 
 .about {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
+.container-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .container-image img {
-    width: 400px;
+    width: 450px;
     height: 350px;
 }
 
@@ -182,30 +196,45 @@ section {
 }
 
 .about .row {
+
+    width: 100%;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     background-color: var(--black);
     gap: 1.5rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .about .row .content {
     padding: 2rem;
     align-items: center;
     justify-content: center;
+
 }
 
 .about .row .content h3 {
     font-size: 3rem;
     color: var(--main-color);
-    width: 100%;
+    width: 60%;
+    margin-left: -30px;
+
 }
 
 .about .row .content p {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     color: #fff;
-    padding: 1rem 0;
+    margin-left: -30px;
     line-height: 1.5;
-    width: 95%;
+    width: 70%;
 }
 
 .btn-about {
@@ -217,11 +246,13 @@ section {
     font-weight: 500;
     cursor: pointer;
     margin-top: 1rem;
-    display: inline-block;
     border-radius: 8px;
-    width: 10rem;
+    width: 200px;
     text-align: center;
-    margin-left: 120px;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+    display: inline-block;
 }
 
 .btn-about:hover {
@@ -290,8 +321,9 @@ section {
     margin-top: 1rem;
     /* display: inline-block; */
     border-radius: 8px;
-    width: 15%;
+    width: 200px;
     text-align: center;
+    text-decoration: none;
 }
 
 .btn-menu:hover {
@@ -365,8 +397,16 @@ footer a:hover {
     font-weight: 400;
     color: #fff;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    padding: 0;
+    margin: 0;
 }
+
+.social-media-footer a {
+    text-decoration: none;
+}
+
+
 
 /* Responsiveness 
 espaçamento entra as paginas: 
@@ -420,11 +460,74 @@ espaçamento entra as paginas:
     .review .box-container .box {
         width: 80%;
     }
+
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+
+    .nav-midia {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        justify-content: center;
+        background-color: #000;
+    }
+
+    .btn {
+        width: 60%;
+    }
+
+    .about .row .content h3 {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    
+    .about .row .content p {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .content .btn-about {
+        width: 70%;
+    }
+
+    .container-btn-menu .btn-menu {
+        width: 50%;
+    }
+
     header {
         padding: 0;
+    }
+
+    .dropdown {
+        display: block;
+    }
+
+
+    .dropdown-menu {
+        width: 150px;
+    }
+
+    .dropdown-menu a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        background-color: #000;
+        color: #fff;
+        text-decoration: none;
+        font-size: 2rem;
+    }
+
+    .btn-drop {
+
+        width: 30px;
+        height: 30px;
+        background-color: #000;
     }
 
     .navbar {
@@ -435,23 +538,6 @@ espaçamento entra as paginas:
         display: none;
     }
 
-    .mobile-menu {
-        display: flex;
-        flex-direction: row;
-        display: block;
-        cursor: pointer;
-    }
-
-    .footer-mobile {
-        display: flex;
-        flex-direction: row;
-    }
-
-    #mobile-menu {
-        display: flex;
-        flex-direction: row;
-    }
-
     .about .row {
         width: 100%;
         flex-direction: column;
@@ -460,7 +546,7 @@ espaçamento entra as paginas:
     }
 
     .btn-about {
-        width: 30%;
+        width: 20%;
         margin: 10px 0;
 
     }
@@ -501,7 +587,7 @@ espaçamento entra as paginas:
 
 @media (max-width:480px) {
     .content {
-        width: 80%;
+        width: 100%;
     }
 
     .content h3 {
@@ -514,23 +600,27 @@ espaçamento entra as paginas:
     }
 
     .btn {
-        width: 60%;
+        width: 80%;
     }
 
-    .btn-about {
-        width: 70%;
-    }
-
-    .btn-menu {
-        width: 70%;
-    }
-
-    .review .box-container {
+    .row .content {
         width: 90%;
     }
 
+    .content .btn-about {
+        width: 100%;
+    }
+
+    .container-btn-menu .btn-menu {
+        width: 90%;
+    }
+
+    .review .box-container {
+        width: 100%;
+    }
+
     .menu .box-container .box {
-        width: 80%;
+        width: 90%;
     }
 
     .menu .box-container .box img {
@@ -540,4 +630,15 @@ espaçamento entra as paginas:
     .maps {
         width: 90%;
     }
+}
+
+@media (max-width:320px) {
+    .box-container {
+        width: 100%;
+    }
+
+    .review .box-container .box {
+        width: 90%;
+    }
+
 }
